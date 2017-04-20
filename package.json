@@ -1,0 +1,36 @@
+{
+  "name": "nullfined",
+  "description": "Convert any null value to undefined",
+  "version": "0.0.1",
+  "main": "index.js",
+  "license": "MIT",
+  "author": {
+    "name": "Roman Masyhar",
+    "email": "mhrohman@live.com",
+    "url": "https://github.com/rohmanhm"
+  },
+  "repository": "rohmanhm/nullfined",
+  "devDependencies": {
+    "ava": "^0.19.1",
+    "eslint": "^3.19.0",
+    "eslint-config-airbnb-base": "^11.1.3",
+    "eslint-plugin-import": "^2.2.0",
+    "xo": "^0.18.1"
+  },
+  "dependencies": {
+    "lodash.isarray": "^4.0.0",
+    "lodash.isobject": "^3.0.2"
+  },
+  "scripts": {
+    "test": "xo && ava"
+  },
+  "xo": {
+    "extends": "airbnb-base",
+    "plugins": [
+      "import"
+    ]
+  },
+  "ava" : {
+    "verbose": true
+  }
+}
