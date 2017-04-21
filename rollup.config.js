@@ -7,7 +7,7 @@ const pkg = require('./package.json');
 const external = Object.keys(pkg.dependencies);
 
 export default {
-  entry: 'src/index.js',
+  entry: pkg.module,
   plugins: [
     babel(babelrc()),
     uglify(),
