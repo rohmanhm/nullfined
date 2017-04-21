@@ -14,7 +14,22 @@ yarn add nullfined
 ```
 
 ## Usage
-> For a while, just read from the test
+```javascript
+nullfined(value)
+```
+
+## Example
+```javascript
+// ES6 import module
+import nullfined from 'nullfined';
+
+nullfined(null) // return undefined
+```
+
+> it also support object and array recursively. Like `Vaper` does
+
+## Related
+* [Vaper](https://github.com/rohmanhm/vaper) ~ 1kb Value Replacer any type recursively
 
 ## License
 MIT © [Roman Masyhar](https://github.com/rohmanhm)
