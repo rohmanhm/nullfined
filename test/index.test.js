@@ -1,5 +1,5 @@
 import test from 'ava';
-import nullfined from '../';
+import nullfined from '../dist/nullfined';
 
 test('should exists', (t) => {
   if (nullfined) {
@@ -60,4 +60,16 @@ test('should return object in object recursively', (t) => {
 test('should resolve null value in array recursively', (t) => {
   const actual = nullfined([1, 2, null, 4, [null, true, ['somestring', null]]]);
   t.deepEqual(actual, [1, 2, undefined, 4, [undefined, true, ['somestring', undefined]]]);
+});
+
+// https://github.com/rohmanhm/nullfined/issues/1
+test('should resolve Array in Object', (t) => { // eslint-disable-line ava/no-skip-test
+  const actual = nullfined({
+    a: 1,
+    b: [null, { a: null }, { b: 3 }],
+  });
+  t.deepEqual(actual, {
+    a: 1,
+    b: [undefined, { a: undefined }, { b: 3 }],
+  });
 });
