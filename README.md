@@ -1,4 +1,6 @@
 # Nullfined
+
+[![Greenkeeper badge](https://badges.greenkeeper.io/rohmanhm/nullfined.svg)](https://greenkeeper.io/)
  [![Build Status](https://travis-ci.org/rohmanhm/nullfined.svg?branch=master)](https://travis-ci.org/rohmanhm/nullfined)
 
 Convert null value from any type of value to undefined.
