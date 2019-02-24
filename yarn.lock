@@ -3676,10 +3676,10 @@ validate-npm-package-license@^3.0.1:
     spdx-correct "^3.0.0"
     spdx-expression-parse "^3.0.0"
 
-vaper@^1.0.1-0:
-  version "1.0.1-0"
-  resolved "https://registry.yarnpkg.com/vaper/-/vaper-1.0.1-0.tgz#70f126cad097a31b358994554bfa50c3967e09d5"
-  integrity sha512-Hh3Tk+ivNaT37XiV/pjTwY4aD19NAJ5+eEAE+smpr1ZtDQ/+k1DLgLTNvyBOEIFqpJTUEAxBO+dObiJJIUI1GA==
+vaper@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/vaper/-/vaper-1.0.1.tgz#92d071a7d77e48660d37e3d632f45611fc64771d"
+  integrity sha512-SlGcsyLotnSj+oc+8PHVSt7AqTcka178HH6eABPiftbzpMJlwOF6Hx+z9mDLvMYxYOgzDKCzl4MHeucO2l+uhg==
   dependencies:
     lodash.isarray "^4.0.0"
     lodash.isobject "^3.0.2"
