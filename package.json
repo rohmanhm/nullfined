@@ -3,56 +3,41 @@
   "description": "Convert any null value to undefined",
   "version": "1.0.0",
   "main": "dist/nullfined.js",
-  "module": "index.js",
+  "types": "types/index.d.ts",
   "license": "MIT",
   "author": {
     "name": "Roman Masyhar",
     "email": "mhrohman@live.com",
     "url": "https://github.com/rohmanhm"
   },
-  "files": [
-    "src",
-    "dist"
-  ],
   "repository": "rohmanhm/nullfined",
   "devDependencies": {
-    "ava": "^1.0.1",
-    "babel-cli": "^6.24.1",
-    "babel-eslint": "^8.0.0",
-    "babel-plugin-external-helpers": "^6.22.0",
-    "babel-preset-latest": "^6.24.1",
-    "babelrc-rollup": "^3.0.0",
-    "eslint-config-airbnb-base": "^12.0.0",
-    "eslint": "^5.0.0",
-    "eslint-plugin-import": "^2.2.0",
-    "rollup": "^0.65.0",
-    "rollup-plugin-babel": "^3.0.0",
-    "rollup-plugin-uglify": "^4.0.0",
-    "xo": "^0.22.0"
+    "ava": "^1.2.1",
+    "lodash.camelcase": "^4.3.0",
+    "rollup": "^1.2.3",
+    "rollup-plugin-babel": "^4.3.2",
+    "rollup-plugin-commonjs": "^9.2.1",
+    "rollup-plugin-node-resolve": "^4.0.1",
+    "rollup-plugin-sourcemaps": "^0.4.2",
+    "rollup-plugin-typescript2": "^0.19.2",
+    "rollup-plugin-uglify": "^6.0.2",
+    "tslint": "^5.13.0",
+    "tslint-config-standard": "^8.0.1",
+    "typescript": "^3.3.3333"
   },
   "dependencies": {
-    "vaper": "^0.0.1"
+    "vaper": "^1.0.1-0"
   },
   "scripts": {
     "build": "rollup -c",
     "watch": "rollup -c -w",
-    "test": "xo && ava"
-  },
-  "xo": {
-    "extends": "airbnb-base",
-    "plugins": [
-      "import"
-    ],
-    "rules": {
-      "unicorn/filename-case": [
-        "error",
-        {
-          "case": "camelCase"
-        }
-      ]
-    }
+    "test": "ava"
   },
   "ava": {
-    "verbose": true
+    "verbose": true,
+    "ignore": [
+      "rollup.config.js",
+      "test"
+    ]
   }
 }

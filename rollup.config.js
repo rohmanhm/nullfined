@@ -1,24 +1,39 @@
-import babel from 'rollup-plugin-babel';
-import babelrc from 'babelrc-rollup'; // eslint-disable-line import/extensions
-import uglify from 'rollup-plugin-uglify';
+import resolve from 'rollup-plugin-node-resolve';
+import commonjs from 'rollup-plugin-commonjs';
+import sourceMaps from 'rollup-plugin-sourcemaps';
+import typescript from 'rollup-plugin-typescript2';
+import camelCase from 'lodash.camelcase';
+import { uglify } from 'rollup-plugin-uglify';
 
 const pkg = require('./package.json');
 
 const external = Object.keys(pkg.dependencies);
 
+const libraryName = 'nullfined';
+
 export default {
-  entry: pkg.module,
+  input: 'src/index.ts',
+  output: [
+    {
+      file: pkg.main,
+      name: camelCase(libraryName),
+      format: 'umd',
+      sourcemap: true,
+    },
+  ],
   plugins: [
-    babel(babelrc()),
+    // Compile TypeScript files
+    typescript({ useTsconfigDeclarationDir: true }),
+    // Allow bundling cjs modules (unlike webpack, rollup doesn't understand cjs)
+    commonjs(),
+    // Allow node_modules resolution, so you can use 'external' to control
+    // which external modules to include in the bundle
+    // https://github.com/rollup/rollup-plugin-node-resolve#usage
+    resolve(),
+
+    // Resolve source maps to the original source
+    sourceMaps(),
     uglify(),
   ],
   external,
-  targets: [
-    {
-      dest: pkg.main,
-      format: 'umd',
-      moduleName: 'Nullfined',
-      sourceMap: true,
-    },
-  ],
 };
